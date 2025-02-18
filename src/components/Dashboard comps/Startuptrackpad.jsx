@@ -26,7 +26,7 @@ const Startuptrackpad = ({ email }) => {
   useEffect(() => {
     const fetchStatus = async () => {
       try {
-        const response = await axios.post('https://ayush-portal-new-backend.vercel.app/api/status-trackpad', { Startup_Email: email });
+        const response = await axios.post('http://localhost:5002/api/status-trackpad', { Startup_Email: email });
         const { success, statusInfo } = response.data;
 
         if (success) {

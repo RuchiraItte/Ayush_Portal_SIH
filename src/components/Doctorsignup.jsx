@@ -87,7 +87,7 @@ function Doctorsignup() {
    
         phnvalid ? setPhnerror("Phone number  must contain 10 Numbers") : setPhnerror("");
      try{
-     const response = await axios.post("https://ayush-portal-new-backend.vercel.app/api/doctor-reg",doctordata,{
+     const response = await axios.post("http://localhost:5002/api/doctor-reg",doctordata,{
       withCredentials: true,  // Ensures cookies or sessions are included in cross-origin requests
     });
      if(response.data.success)
@@ -112,7 +112,7 @@ function Doctorsignup() {
     
   const fetchDistricts = async () => {
       try {
-          const response = await fetch('https://ayush-portal-new-backend.vercel.app/api/districts', {
+          const response = await fetch('http://localhost:5002/api/districts', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',

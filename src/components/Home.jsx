@@ -117,7 +117,7 @@ function Home()
         }));
     
         try {
-          const response = await fetch('https://ayush-portal-new-backend.vercel.app/api/chat', {
+          const response = await fetch('http://localhost:5002/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ messagesreq: apiMessages }),

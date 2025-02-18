@@ -82,7 +82,7 @@ const Investorsignupp = () => {
     setBringTheLoadingPage(true);
     e.preventDefault();
     try {
-      const response = await axios.post("https://ayush-portal-new-backend.vercel.app/api/investor-reg", investorData);
+      const response = await axios.post("http://localhost:5002/api/investor-reg", investorData);
       if (response.data.success) {
         setBringTheLoadingPage(false);
         alert("Successfully Signed Up");
@@ -103,7 +103,7 @@ const Investorsignupp = () => {
 
   const fetchDistricts = async () => {
     try {
-      const response = await fetch('https://ayush-portal-new-backend.vercel.app/api/districts', {
+      const response = await fetch('http://localhost:5002/api/districts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ stateName: investorData.state }),

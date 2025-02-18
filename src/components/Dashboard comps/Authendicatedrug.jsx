@@ -10,7 +10,7 @@ export default function Authendicatedrug({email}) {
     useEffect(() => { // fetch pending
       const fetchpendingEmails = async () => {
         try {
-          const response = await axios.get('https://ayush-portal-new-backend.vercel.app/api/pending-to-permision',email,{
+          const response = await axios.get('http://localhost:5002/api/pending-to-permision',email,{
             withCredentials: true,  // Ensures cookies or sessions are included in cross-origin requests
           });
           if(response.data.success) {
@@ -32,7 +32,7 @@ export default function Authendicatedrug({email}) {
     {
       console.log("you can accept drug inspector",presentmail); // /grant-permission-to-druginspector Email_ID
       try {
-        const response = await axios.post('https://ayush-portal-new-backend.vercel.app/api/grant-permission-to-druginspector', { Email_ID: presentmail }); 
+        const response = await axios.post('http://localhost:5002/api/grant-permission-to-druginspector', { Email_ID: presentmail }); 
         if (response.data.success) {
           console.log("success granted permit");
           alert("success granted permit");
