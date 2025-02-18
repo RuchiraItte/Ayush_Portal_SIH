@@ -7,7 +7,7 @@ const YourProfile = ({ email }) => {
 
   // Fetch the startup data from backend API
   const fetchStartupData = () => {
-    fetch("http://localhost:5002/api/startup-basic", {
+    fetch("https://ayush-portal-new-backend.vercel.app/api/startup-basic", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

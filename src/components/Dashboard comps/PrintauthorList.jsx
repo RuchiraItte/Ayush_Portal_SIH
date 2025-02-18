@@ -12,7 +12,7 @@ function PrintauthorList({startupmails,type}){
 const fetchfulldetails = async (email) => {
   try {
     console.log("Fetching details for: ", email);
-    const response = await axios.post('http://localhost:5002/api/startup-dash-retrieval', { Email_ID: email }); 
+    const response = await axios.post('https://ayush-portal-new-backend.vercel.app/api/startup-dash-retrieval', { Email_ID: email }); 
     if (response.data.success) {
       // console.log("AAAAAAA",response.data.data[0]);
       
@@ -26,7 +26,7 @@ const fetchfulldetails = async (email) => {
 const fetchbasicdetails = async (email) => {
   try {
     console.log("Fetching details for: ", email);
-    const response = await axios.post('http://localhost:5002/api/startup-basic', { Email_ID: email }); 
+    const response = await axios.post('https://ayush-portal-new-backend.vercel.app/api/startup-basic', { Email_ID: email }); 
     if (response.data.success) {
       return response.data.basicdata; // Return the fetched details
     }
@@ -56,7 +56,7 @@ async function approveClick(presentmail)
 {
    console.log(`you can approve license to ${presentmail}`);
    try {
-    const response = await axios.post('http://localhost:5002/api/make-it-licensed', { Email_ID: presentmail }); 
+    const response = await axios.post('https://ayush-portal-new-backend.vercel.app/api/make-it-licensed', { Email_ID: presentmail }); 
     if (response.data.success) {
       console.log("success licensed");
     }else{
@@ -73,7 +73,7 @@ const handleSubmit = async(presentmail) => {
   setrejected(false);  // Hide the feedback form after submission
   setFeedback('');     // Optionally clear the feedback after submission
   try {
-    const response = await axios.post('http://localhost:5002/api/make-it-LArejected', { Email_ID: presentmail }); 
+    const response = await axios.post('https://ayush-portal-new-backend.vercel.app/api/make-it-LArejected', { Email_ID: presentmail }); 
     if (response.data.success) {
       console.log("success rejected");
     }else{
@@ -84,7 +84,7 @@ const handleSubmit = async(presentmail) => {
   }
 
   try {
-    const response = await axios.post('http://localhost:5002/api/startup-feedback-post', { Email: presentmail , feedback:feedback }); 
+    const response = await axios.post('https://ayush-portal-new-backend.vercel.app/api/startup-feedback-post', { Email: presentmail , feedback:feedback }); 
     if (response.data.success) {
       console.log("successfully feedback sent");
     }else{
@@ -127,7 +127,7 @@ const handleInputChange = (e) => {
   {
     console.log("you can assign drug inspector",presentmail); // /make-it-assign  Email_ID
     try {
-      const response = await axios.post('http://localhost:5002/api/make-it-assign', { Email_ID: presentmail }); 
+      const response = await axios.post('https://ayush-portal-new-backend.vercel.app/api/make-it-assign', { Email_ID: presentmail }); 
       if (response.data.success) {
         console.log("success pending assign");
       }else{

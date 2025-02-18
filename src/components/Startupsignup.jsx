@@ -98,7 +98,7 @@ function Startupsignup() {
   try {
     console.log(startUpdata);
     
-    const response = await axios.post("http://localhost:5002/api/startup-reg", startUpdata);
+    const response = await axios.post("https://ayush-portal-new-backend.vercel.app/api/startup-reg", startUpdata);
     console.log(response);
     
     if (response.data.success) {
@@ -132,7 +132,7 @@ function Startupsignup() {
     
   const fetchDistricts = async () => {
       try {
-          const response = await fetch('http://localhost:5002/api/districts', {
+          const response = await fetch('https://ayush-portal-new-backend.vercel.app/api/districts', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',

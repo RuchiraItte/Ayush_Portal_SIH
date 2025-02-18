@@ -11,7 +11,7 @@ export default function Inscommunication({email}) {
        try{
             console.log("the start");
             const Email = email;
-          const response = await axios.post("http://localhost:5002/api/startup-feedback-get",{Email});
+          const response = await axios.post("https://ayush-portal-new-backend.vercel.app/api/startup-feedback-get",{Email});
           setFeedback(response.data.data);
 
       }
@@ -20,7 +20,7 @@ export default function Inscommunication({email}) {
         }
       try{
               const Startup_Email = email;
-              const isnotifyResponse = await axios.post("http://localhost:5002/api/is-notify-eligible",{Startup_Email});
+              const isnotifyResponse = await axios.post("https://ayush-portal-new-backend.vercel.app/api/is-notify-eligible",{Startup_Email});
               setIsEnabled(isnotifyResponse.data.success);//finished is example varibale plz modify it.
             console.log("enableeeeeeeeeeeee  ",isnotifyResponse.data.success);  
         }
